@@ -1,0 +1,27 @@
+<!-- templates/articles.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles Containing "{{ word }}"</title>
+</head>
+<body>
+    <h1>Articles Containing "{{ word }}"</h1>
+
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <h3>{{ article['title'] }}</h3>
+                    <!-- <p>{{ article['content'] }}</p> -->
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No articles found containing the word "{{ word }}".</p>
+    {% endif %}
+
+    <a href="/">Back to Word Cloud</a>
+</body>
+</html>
